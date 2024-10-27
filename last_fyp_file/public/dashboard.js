@@ -136,8 +136,8 @@ function customerPendingOrders(orders) {
   }
   orders.forEach((order) => {
     container.innerHTML += `
-            <tr>
-                <td>#000${order.order_id}</td>
+    <tr>                
+      <td>#000${order.order_id}</td>
                 <td>${order.problem_type}</td>
                 <td class="${order.urgency_level.toLowerCase()}">${
       order.urgency_level[0].toUpperCase() + order.urgency_level.substring(1)

@@ -6,20 +6,22 @@
 <title>Dashboard</title>
 <link rel="stylesheet" href="style.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
-<body>
+<body class="backgroundColor">
   
-<div class="header">
-  <div class="header-content">
+<div class="header items-center bg-black text-gray-700 flex justify-center h-16 px-32">
+  <div class="flex w-full justify-between">
     <span>Last login: <span class="datetime" id="last-datetime"></span></span>
-    <ul>
     <!-- Place your bell and profile icons here -->
-    <a href="notification.html"><img src="images/notification.svg" alt="Notifications" class="icon"></a>
-    
+    <svg class="text-gray-200" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>    
   </div>
 </div>
 
+
+<div class="flex">
 
 <div class="sidebar">
   <!-- Add Logo at the top of sidebar -->
@@ -50,32 +52,35 @@
 
 <!-- Rest of your dashboard content -->
 
-<div class="dashboard-container">
-  <div class="container">
-    <h1>Dashboard</h1>
+<div class="flex container">
+  <div class="ml- max-w-screen-lg mt-4">
+    <div class="flex mb-3">
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+      <h1 class="ml-2 text-3xl">Dashboard</h1>
+    </div>
     <!-- Status indicators -->
-    <div class="status-indicators">
-      <div class="indicator ongoing">
-        <i class="fa-regular fa-clock"></i>
+    <div class="status-indicators gap-x-3 h-28 mb-3">
+      <div class="flex-1 indicator ongoing">
+        <i class="fa-regular fa-clock mr-2"></i>
         <span>Ongoing Jobs<br><div class="count" id="ongoing-count"></div></span>
         
       </div>
-      <div class="indicator completed">
-        <i class="fa-regular fa-circle-check"></i> 
+      <div class="flex-1 indicator completed">
+        <i class="fa-regular fa-circle-check mr-2"></i> 
         <span>Completed Jobs<br><div class="count" id="completed-count"></div></span>
         
       </div>
-      <div class="indicator pending">
-        <i class="fas fa-tasks"></i>
+      <div class="flex-1 indicator pending">
+        <i class="fas fa-tasks mr-2"></i>
         <span>Pending Jobs<br><div class="count" id="pending-count"></div></span>
         
       </div>
     </div>
      <!-- Customer Pending List -->
-  <div class="customer-pending-list">
-    <h2>Customer Pending List</h2>
-    <table>
-      <thead>
+  <div class="styled-table customer-pending-list ">
+    <h2 class="text-xl mb-1">Customer Pending List</h2>
+    <table class="">
+      <thead class="rounded-xl">
         <tr>
           <th>Service No.</th>
           <th>Problem Type</th>
@@ -89,8 +94,8 @@
     </table>
   </div>
   <!-- Customer Ongoing List -->
-  <div class="customer-ongoing-list" >
-    <h2>Customer Ongoing List</h2>
+  <div class="styled-table" >
+    <h2 class="text-xl mb-1">Customer Ongoing List</h2>
     <table>
       <thead>
         <tr>
@@ -107,8 +112,8 @@
   </div>
   <!-- Technician List - This section is not visible in the image -->
   <!-- Add your technician list here -->
-  <div class="technician-list">
-    <h2>Technician List</h2>
+  <div class="styled-table">
+    <h2 class="text-xl mb-1">Technician List</h2>
     <table>
       <thead>
         <tr>
@@ -126,6 +131,8 @@
     </table>
   </div>
 </div>
+</div>
+
 
 <script>
   const links = document.querySelectorAll('.sidebar ul li a');
